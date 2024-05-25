@@ -1,6 +1,7 @@
 {
   "name": "quiz-app",
   "version": "0.1.0",
+  "homepage": "https://warriorofloneliness.github.io/quiz-app/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.5",
