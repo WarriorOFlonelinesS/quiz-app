@@ -15,29 +15,29 @@ const quizzesSlice = createSlice({
     error: null,
   },
   reducers: {
-    addQuiz: (state, action) => {
+    addQuiz: (state:any, action:any) => {
       state.items.push(action.payload);
     },
-    updateQuiz: (state, action) => {
-      const index = state.items.findIndex(quiz => quiz.id === action.payload.id);
+    updateQuiz: (state:any, action:any) => {
+      const index = state.items.findIndex((quiz:any) => quiz.id === action.payload.id);
       if (index !== -1) {
         state.items[index] = action.payload;
       }
     },
-    deleteQuiz: (state, action) => {
-      state.items = state.items.filter(quiz => quiz.id !== action.payload);
+    deleteQuiz: (state:any, action:any) => {
+      state.items = state.items.filter((quiz:any) => quiz.id !== action.payload);
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: (builder:any) => {
     builder
-      .addCase(getQuizzes.pending, (state) => {
+      .addCase(getQuizzes.pending, (state:any) => {
         state.loading = true;
       })
-      .addCase(getQuizzes.fulfilled, (state, action) => {
+      .addCase(getQuizzes.fulfilled, (state:any, action:any) => {
         state.items = action.payload;
         state.loading = false;
       })
-      .addCase(getQuizzes.rejected, (state, action) => {
+      .addCase(getQuizzes.rejected, (state:any, action:any) => {
         state.error = action.error.message;
         state.loading = false;
       });
